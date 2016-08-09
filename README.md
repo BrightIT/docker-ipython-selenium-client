@@ -2,11 +2,14 @@
 
 [Dockerfile](https://github.com/BrightIT/docker-ipython-selenium-client/blob/master/Dockerfile)
 
+![](https://raw.githubusercontent.com/BrightIT/docker-ipython-selenium-client/master/example.png 'example')
+
 ### Prerequisites
 Samples below use  `selenium_net` network to make connection between containers. We assume you have a selenium container running with firefox as the one below:
 
     $ docker network create --driver bridge selenium_net
     $ docker run -e no_proxy=localhost --network=selenium_net --name selenium_firefox -d -p 4444:4444 -p 5900:5900 selenium/standalone-firefox-debug
+
 
 ### Usage - iPython interactive selenium session
 Given the above container is running you can run an interactive ipython sessions  as follows:
@@ -18,6 +21,7 @@ Given the above container is running you can run an interactive ipython sessions
     In [3]: browser.get("http://www.bright-it.com")
     In [4]: browser.close()
     In [5]: exit();
+
 
 ### Usage - script execution
 To run a `script.py` in your current directory here you can run this:
