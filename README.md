@@ -5,11 +5,12 @@
 ![](https://raw.githubusercontent.com/BrightIT/docker-ipython-selenium-client/master/example.png 'example')
 
 ### Prerequisites
-Samples below use  `selenium_net` network to make connection between containers. We assume you have a selenium container running with firefox as the one below:
+Examples below use  `selenium_net` network to make connection between containers, we also use a prebuild selenium container with firefox, you can get both using this commands:
 
     $ docker network create --driver bridge selenium_net
     $ docker run -e no_proxy=localhost --network=selenium_net --name selenium_firefox -d -p 4444:4444 -p 5900:5900 selenium/standalone-firefox-debug
 
+This will start a `firefox` with vnc access [vnc://localhost:5900](vnc://localhost:5900) and password: `secret` that can be used to run selenium tests.
 
 ### Usage - iPython interactive selenium session
 Given the above container is running you can run an interactive ipython sessions  as follows:
